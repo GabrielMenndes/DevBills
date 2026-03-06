@@ -9,7 +9,7 @@ const createTransaction = async (
     request: FastifyRequest<{ Querystring: CreateTransactionInput }>,
     reply: FastifyReply,
 ): Promise<void> => {
-    const userId = "FED$%1505SE";
+    const userId = request.userId;
 
     if (!userId) {
         return reply.status(401).send({ error: "Usuário Não esta Autenticado" });

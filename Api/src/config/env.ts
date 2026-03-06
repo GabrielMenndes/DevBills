@@ -9,6 +9,11 @@ const envSchema = z.object({
     NODE_ENV: z.enum(["dev", "prod", "test"], {
         message: "NODE_ENV deve ser 'dev', 'prod' ou 'test'",
     }),
+
+    //Firebase
+    FIREBASE_PROJECT_ID: z.string().optional(),
+    FIREBASE_PRIVATE_KEY: z.string().optional(),
+    FIREBASE_CLIENT_EMAIL: z.string().optional(),
 });
 
 const _env = envSchema.safeParse(process.env);
